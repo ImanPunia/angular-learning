@@ -1,7 +1,9 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Subscription } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-hero-detail',
@@ -12,8 +14,12 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
 
   heroSelected: Hero;
   heroSelectedSubscription: Subscription ;
+  id: number;
 
-  constructor(private readonly heroServ: HeroService) { }
+  constructor(private readonly heroServ: HeroService,
+    private readonly activeRoute: ActivatedRoute,
+    private readonly location: Location) { }
+
   ngOnDestroy(): void {
     if(this.heroSelectedSubscription) {
       this.heroSelectedSubscription.unsubscribe();
@@ -21,10 +27,22 @@ export class HeroDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.heroSelectedSubscription = this.heroServ.selectedHero.subscribe((hero)=>
-    {debugger;
-      this.heroSelected = hero;
-    } )
+    this.getId();
+    this.getHero();
+    }
+
+    getId() {
+      this.id = +this.activeRoute.snapshot.paramMap.get('id');
+    }
+
+    getHero() {
+      this.heroSelectedSubscription = this.heroServ.getSelectedHero(this.id).subscribe(
+        (hero) => this.heroSelected = hero
+      )
+    }
+
+    return() {
+      this.location.back();
     }
 
 }

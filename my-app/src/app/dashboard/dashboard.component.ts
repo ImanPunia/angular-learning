@@ -1,20 +1,20 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import {Hero} from '../hero';
+import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
 })
-export class HeroesComponent implements OnInit , OnDestroy {
+export class DashboardComponent implements OnInit, OnDestroy {
 
-  heroes: Hero[];
-  heroesSubscription : Subscription;
+  heroes: Hero[] = [];
+  heroesSubscription: Subscription;
 
   constructor(private readonly heroServ: HeroService) { }
-  
+
   ngOnDestroy(): void {
     if(this.heroesSubscription) {
       this.heroesSubscription.unsubscribe();
@@ -27,8 +27,7 @@ export class HeroesComponent implements OnInit , OnDestroy {
 
   getHeroes() {
     this.heroesSubscription = this.heroServ.getHero().subscribe((heroes)=>{
-      this.heroes = heroes;
+      this.heroes = heroes.slice(1,5);
     });
   }
-  
 }

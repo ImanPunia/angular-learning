@@ -4,13 +4,13 @@ import { HEROES } from './mock-heroes';
 import { Observable, of, Subject } from 'rxjs';
 import {MessagesService } from './messages.service'
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
-  selectedHero = new Subject<Hero>();
 
   constructor(private readonly messageServ: MessagesService) { }
 
@@ -19,8 +19,8 @@ export class HeroService {
     return of(HEROES);
   }
 
-  selectHero(hero: Hero) {
-    this.messageServ.addMessage(`Hero is selected with id= ${hero.id}`);
-    this.selectedHero.next(hero);
+  getSelectedHero(id: number): Observable<Hero> {
+    this.messageServ.addMessage(`Hero is selected with id= ${id}`);
+    return of(HEROES.find(hero => hero.id === id));
   }
 }
