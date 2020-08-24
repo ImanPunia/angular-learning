@@ -1,31 +1,8 @@
-<div class="toolbar">
-  <span style="margin-left: 1rem;">Welcome</span>
+<div>
+  <app-notify></app-notify>
 </div>
-
-<div class="content">
-
-  <div class="card highlight-card card-small">
-
-    <span>Make your design live</span>
-
-  </div>
-
-  <span class="banner-line" >Your style Your world</span>
-
-  <div class="card-container">
-    <div class="card card-small" tabindex="0">
-        <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Develop</span>
-    </div>
-
-    <div class="card card-small" tabindex="0">
-      <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
-      <span>Existing Design</span>
-    </div>
-
-    <div class="card card-small" tabindex="0">
-      <span>Preview</span>
-    </div>
-  </div>
-
     
+<ng-template #renderData>
+  Data is succesfully saved
+</ng-template>
+<button (click)="clear()">clear</button>
