@@ -6,7 +6,7 @@ import { NotifyService } from '../notification.service';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss']
 })
-export class NotifyComponent implements OnInit, AfterViewInit {
+export class NotifyComponent implements AfterViewInit {
 
   @ViewChild('showMessage', {read: ViewContainerRef}) showMessage: ViewContainerRef;
   constructor(private readonly notifySer: NotifyService) { }
@@ -14,10 +14,6 @@ export class NotifyComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.notifySer.containerRef = this.showMessage;
     this.showMessage.createEmbeddedView(this.notifySer.showData);
-  }
-
-  ngOnInit(): void {
-
   }
 
 }

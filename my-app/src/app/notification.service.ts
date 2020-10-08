@@ -8,14 +8,10 @@ export class NotifyService {
   showData: TemplateRef<any>;
   containerRef: ViewContainerRef;
 
-
   constructor() { }
 
   clearTemplate() {
     this.containerRef.clear();
   }
 
-  showTemplate(data: TemplateRef<any>) {debugger;
-    this.showData = data; 
-  }
 }
