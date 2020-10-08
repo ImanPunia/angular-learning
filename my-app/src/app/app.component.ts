@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit  } from '@angular/core';
 import { NotifyService } from './notification.service';
 
 
@@ -7,18 +7,26 @@ import { NotifyService } from './notification.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, AfterViewInit{
  
   @ViewChild('renderData' , {static:true}) messageRef: TemplateRef<any>;
   constructor(private readonly notifyser: NotifyService) {
 
   }
+  ngAfterViewInit(): void {
+  }
+ 
   ngOnInit(): void {
-    this.notifyser.showTemplate(this.messageRef);
+        this.notifyser.showTemplate(this.messageRef);
+
   }
 
   clear() {
     this.notifyser.clearTemplate();
   }
+
+ 
+
+
 
 }

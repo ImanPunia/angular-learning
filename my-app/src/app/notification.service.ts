@@ -1,4 +1,4 @@
-import { Injectable, TemplateRef } from '@angular/core';
+import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -6,15 +6,16 @@ import { Injectable, TemplateRef } from '@angular/core';
 export class NotifyService {
 
   showData: TemplateRef<any>;
+  containerRef: ViewContainerRef;
 
 
   constructor() { }
 
   clearTemplate() {
-    this.showData = null;
+    this.containerRef.clear();
   }
 
-  showTemplate(data: TemplateRef<any>) {
+  showTemplate(data: TemplateRef<any>) {debugger;
     this.showData = data; 
   }
 }
