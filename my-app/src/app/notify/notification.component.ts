@@ -6,14 +6,19 @@ import { NotifyService } from '../notification.service';
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.scss']
 })
-export class NotifyComponent implements AfterViewInit {
+export class NotifyComponent implements OnInit {
 
-  @ViewChild('showMessage', {read: ViewContainerRef}) showMessage: ViewContainerRef;
+  @ViewChild('showMessage', {read: ViewContainerRef, static: true}) showMessage: ViewContainerRef;
   constructor(private readonly notifySer: NotifyService) { }
+  ngOnInit(): void {
+    this.notifySer.ViewSubject$.subscribe((value) => {
+        this.showView(value);
+    });
+  }
 
-  ngAfterViewInit(): void {
+  showView(value) {
     this.notifySer.containerRef = this.showMessage;
-    this.showMessage.createEmbeddedView(this.notifySer.showData);
+    this.showMessage.createEmbeddedView(value);
   }
 
 }

@@ -14,11 +14,14 @@ export class AppComponent implements OnInit{
   constructor(private readonly notifyser: NotifyService) { }
   
   ngOnInit(): void {
-        this.notifyser.showData = this.messageRef;
+        this.show();
   }
 
   clear() {
     this.notifyser.clearTemplate();
   }
 
+  show() {
+    this.notifyser.initiateview(this.messageRef);
+  }
 }
