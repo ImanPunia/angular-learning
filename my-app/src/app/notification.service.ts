@@ -6,7 +6,6 @@ import { BehaviorSubject, Subject } from 'rxjs';
 })
 export class NotifyService {
 
-  showData: TemplateRef<any>;
   containerRef: ViewContainerRef;
   ViewSubject = new BehaviorSubject<TemplateRef<any>>(null);
   ViewSubject$ = this.ViewSubject.asObservable();
@@ -14,6 +13,9 @@ export class NotifyService {
   constructor() { }
 
   initiateview(value) {
+    if(this.containerRef)  {
+      this.clearTemplate();
+    }
     this.ViewSubject.next(value);
   }
 
