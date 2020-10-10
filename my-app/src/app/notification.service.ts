@@ -1,9 +1,6 @@
-import { Injectable, TemplateRef, ViewContainerRef } from '@angular/core';
-import { BehaviorSubject, Subject } from 'rxjs';
+import { TemplateRef, ViewContainerRef } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
 export class NotifyService {
 
   containerRef: ViewContainerRef;

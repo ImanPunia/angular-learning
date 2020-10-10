@@ -4,7 +4,8 @@ import { NotifyService } from '../notification.service';
 @Component({
   selector: 'app-text-area',
   templateUrl: './text-area.component.html',
-  styleUrls: ['./text-area.component.scss']
+  styleUrls: ['./text-area.component.scss'],
+  providers: [NotifyService]
 })
 export class TextAreaComponent implements OnInit {
 
