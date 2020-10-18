@@ -5,22 +5,13 @@ import { NotifyService } from '../notification.service';
   selector: 'app-text-area',
   templateUrl: './text-area.component.html',
   styleUrls: ['./text-area.component.scss'],
-  providers: [NotifyService]
+  providers: [NotifyService] //overiding the instance of app component
 })
 export class TextAreaComponent implements OnInit {
 
-  @ViewChild('renderDatas' , {static:true}) messageRefs: TemplateRef<any>;
+  constructor() { }
 
-  constructor(private readonly notifyser: NotifyService) { }
-  ngOnInit(): void {
-    this.show()
-  }
+  ngOnInit(): void { }
 
- clear() {
-  this.notifyser.clearTemplate();
-}
 
-show() {
-  this.notifyser.initiateview(this.messageRefs);
-}
 }
