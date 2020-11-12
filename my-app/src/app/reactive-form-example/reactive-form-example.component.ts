@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-example',
@@ -15,10 +15,17 @@ export class ReactiveFormExampleComponent implements OnInit {
     password : new FormControl('')
   })
 
+  personalInfo = this.fb.group({
+    firstName: [''],
+    lastName: [''],
+    contactNumber: this.fb.control('')
+   })
+
+
   formData;
   newValue: string;
 
-  constructor() { }
+  constructor(private readonly fb: FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -32,7 +39,11 @@ export class ReactiveFormExampleComponent implements OnInit {
     this.name.setValue('Red')
   }
 
-  onSubmit() {
-    this.formData = this.loginInfo.value;
+  onSubmit(value) {
+    if(value) {
+      this.formData = this.personalInfo.value;
+    } else {
+      this.formData = this.loginInfo.value;
+    }
   }
 }

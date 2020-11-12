@@ -15,7 +15,7 @@
     </div>
 
     <div class="pt-2">
-        <form [formGroup] = loginInfo (ngSubmit)= "onSubmit()"> 
+        <form [formGroup] = loginInfo (ngSubmit)= "onSubmit(false)"> 
             <div>
                 <label>Username:</label>
                 <input class="form-control col-3" type="text" formControlName = userName>
@@ -24,6 +24,26 @@
             <div class="py-2">
                 <label>Password:</label>
                 <input class="form-control col-3" type="text" formControlName = password>
+            </div>
+            <button type = "submit" class="btn btn-success"> Submit</button>
+        </form>
+    </div>
+
+    <div class="pt-2">
+        <form [formGroup] = personalInfo (ngSubmit)= "onSubmit(true)"> 
+            <div>
+                <label>FirstName:</label>
+                <input class="form-control col-3" type="text" formControlName = firstName>
+            </div>
+            
+            <div class="py-2">
+                <label>LastName:</label>
+                <input class="form-control col-3" type="text" formControlName = lastName>
+            </div>
+
+            <div class="py-2">
+                <label>Contact:</label>
+                <input class="form-control col-3" type="text" formControlName = contactNumber>
             </div>
             <button type = "submit" class="btn btn-success"> Submit</button>
         </form>
