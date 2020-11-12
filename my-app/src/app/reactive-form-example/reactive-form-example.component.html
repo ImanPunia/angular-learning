@@ -1,0 +1,37 @@
+
+<div class="p-3">
+    <div class="py-3"> 
+        Name : 
+        <span>
+            <input class="form-control col-3" type=text [formControl] = 'name'>
+        </span>
+    </div>
+
+    <button type="button" class="btn btn-secondary" (click)="changeValue()" >Update</button>
+
+    <div class="d-flex flex-column mt-2 border border-light col-3">
+        <span>Value : {{name.value}}</span>   
+        <span>Value through value changes: {{newValue}}</span>   
+    </div>
+
+    <div class="pt-2">
+        <form [formGroup] = loginInfo (ngSubmit)= "onSubmit()"> 
+            <div>
+                <label>Username:</label>
+                <input class="form-control col-3" type="text" formControlName = userName>
+            </div>
+            
+            <div class="py-2">
+                <label>Password:</label>
+                <input class="form-control col-3" type="text" formControlName = password>
+            </div>
+            <button type = "submit" class="btn btn-success"> Submit</button>
+        </form>
+    </div>
+
+    <div class="d-flex flex-column mt-2 border border-light col-3">
+        <span>Form Data : {{formData| json}}</span>   
+    </div>
+
+</div>
+
