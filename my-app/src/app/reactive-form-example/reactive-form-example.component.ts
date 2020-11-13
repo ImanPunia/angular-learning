@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form-example',
@@ -11,12 +11,12 @@ export class ReactiveFormExampleComponent implements OnInit {
   name = new FormControl();
 
   loginInfo = new FormGroup({
-    userName : new FormControl(''),
+    userName : new FormControl('',Validators.required),
     password : new FormControl('')
   })
 
   personalInfo = this.fb.group({
-    firstName: [''],
+    firstName: ['',Validators.maxLength(5)],
     lastName: [''],
     contactNumber: this.fb.control('')
    })
@@ -24,6 +24,12 @@ export class ReactiveFormExampleComponent implements OnInit {
 
   formData;
   newValue: string;
+
+   get firstName() {return this.personalInfo.controls.firstName;}
+
+   get lastName() {return this.personalInfo.get('lastName');}
+
+
 
   constructor(private readonly fb: FormBuilder) { }
 

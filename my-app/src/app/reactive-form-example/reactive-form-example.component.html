@@ -19,7 +19,12 @@
                 <label>Username:</label>
                 <input class="form-control col-3" type="text" [formControl] = loginInfo.controls.userName>
             </div>
-            
+            {{loginInfo.controls.userName.errors|json}}
+            <div *ngIf = "loginInfo.invalid && (loginInfo.touched || loginInfo.dirty)" class="pt-2">
+                <span *ngIf= "loginInfo.controls.userName.errors.required" class="alert alert-danger">
+                    Name Cannot be Empty
+                </span>
+            </div>
             <div class="py-2">
                 <label>Password:</label>
                 <input class="form-control col-3" type="text" [formControl] = loginInfo.controls.password>
@@ -33,7 +38,13 @@
                 <label>FirstName:</label>
                 <input class="form-control col-3" type="text" formControlName = firstName>
             </div>
-            
+            {{personalInfo.controls.firstName.errors|json}}
+            <div *ngIf="personalInfo.invalid && (personalInfo.touched || personalInfo.dirty)" class="pt-2">
+                <span *ngIf= "firstName.errors.maxlength" class="alert alert-danger">
+                    Name cannot br more than 5 characters
+                </span>
+            </div>
+
             <div class="py-2">
                 <label>LastName:</label>
                 <input class="form-control col-3" type="text" formControlName = lastName>
