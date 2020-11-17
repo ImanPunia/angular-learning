@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import {nameNotAllowed, valueRequired } from '../customValidator'
 
 @Component({
   selector: 'app-reactive-form-example',
@@ -11,9 +12,9 @@ export class ReactiveFormExampleComponent implements OnInit {
   name = new FormControl();
 
   loginInfo = new FormGroup({
-    userName : new FormControl('',Validators.required),
+    userName : new FormControl('',nameNotAllowed(/bob/i)),
     password : new FormControl('')
-  })
+  },{validators: valueRequired})
 
   personalInfo = this.fb.group({
     firstName: ['',Validators.maxLength(5)],

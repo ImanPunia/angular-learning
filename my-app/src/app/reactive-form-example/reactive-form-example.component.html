@@ -19,16 +19,22 @@
                 <label>Username:</label>
                 <input class="form-control col-3" type="text" [formControl] = loginInfo.controls.userName>
             </div>
-            {{loginInfo.controls.userName.errors|json}}
             <div *ngIf = "loginInfo.invalid && (loginInfo.touched || loginInfo.dirty)" class="pt-2">
-                <span *ngIf= "loginInfo.controls.userName.errors.required" class="alert alert-danger">
-                    Name Cannot be Empty
+                <span *ngIf= "loginInfo.controls.userName.errors" class="alert alert-danger">
+                    Name not allowed
                 </span>
             </div>
             <div class="py-2">
                 <label>Password:</label>
                 <input class="form-control col-3" type="text" [formControl] = loginInfo.controls.password>
             </div>
+
+            <div *ngIf = "loginInfo.invalid && (loginInfo.touched || loginInfo.dirty)" class="pt-2">
+                <span *ngIf= "loginInfo.errors.valueRequired" class="alert alert-danger">
+                    UserName and Password cannot be empty
+                </span>
+            </div>
+
             <button type = "submit" class="btn btn-success" (click)="onSubmit(false)"> Submit</button>
     </div>
 
