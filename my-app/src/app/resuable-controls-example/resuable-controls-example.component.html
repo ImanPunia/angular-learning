@@ -1,0 +1,7 @@
+<form (ngSubmit)="onSubmit(f)" #f="ngForm" >
+    <div class="mb-4">
+        <label>Input Example</label>
+        <app-custom-input-component placeholder="Type the text here" ngModel name="name"></app-custom-input-component>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Test</button>
+</form>
