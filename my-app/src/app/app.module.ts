@@ -10,6 +10,7 @@ import { ReactiveFormExampleComponent } from './reactive-form-example/reactive-f
 import { ResuableControlsExampleComponent } from './resuable-controls-example/resuable-controls-example.component';
 import { CustomInputComponentComponent } from './custom-input-component/custom-input-component.component';
 import { EmojiRatingComponent } from './emoji-rating/emoji-rating/emoji-rating.component';
+import { OddEvenBoxComponent } from './odd-even-number/odd-even-box/odd-even-box.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EmojiRatingComponent } from './emoji-rating/emoji-rating/emoji-rating.c
     ReactiveFormExampleComponent,
     ResuableControlsExampleComponent,
     CustomInputComponentComponent,
-    EmojiRatingComponent
+    EmojiRatingComponent,
+    OddEvenBoxComponent,
   ],
   imports: [
     BrowserModule,
