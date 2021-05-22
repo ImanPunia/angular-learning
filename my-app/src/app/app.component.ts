@@ -17,7 +17,7 @@ export class AppComponent implements OnInit{
 
   constructor(private readonly notifyser: NotifyService) { }
   
-  ngOnInit(): void { debugger;}
+  ngOnInit(): void { }
 
   feedback: FormGroup = new FormGroup({
     "rating": new FormControl(''),
