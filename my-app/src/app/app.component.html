@@ -1,2 +1,10 @@
-<!-- <app-reactive-form-example></app-reactive-form-example> -->
-<app-resuable-controls-example></app-resuable-controls-example>
+<form [formGroup]="feedback">
+    <div>
+        <div>Provide Feedback:</div>
+        <app-emoji-rating [publicRatings] = 'starsRatings' formControlName= "rating" ></app-emoji-rating>
+    </div>
+    <div>
+        <!-- <div>Comments:</div>
+        <comment-box [formControlName]="comments"></comment-box> -->
+    </div>
+</form>

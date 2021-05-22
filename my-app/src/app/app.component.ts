@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit  } from '@angular/core';
 import { NotifyService } from './notification.service';
-
+import {feedbackData} from './DemoData/starsRatings';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,18 @@ import { NotifyService } from './notification.service';
 export class AppComponent implements OnInit{
  
   @ViewChild('renderData' , {static:true}) messageRef: TemplateRef<any>;
+  starsRatings = feedbackData;
+
 
   constructor(private readonly notifyser: NotifyService) { }
   
-  ngOnInit(): void {
-        this.show();
-  }
+  ngOnInit(): void { debugger;}
+
+  feedback: FormGroup = new FormGroup({
+    "rating": new FormControl(''),
+   // "comments": new FormControl('')
+  });
+
 
   clear() {
     this.notifyser.clearTemplate();
