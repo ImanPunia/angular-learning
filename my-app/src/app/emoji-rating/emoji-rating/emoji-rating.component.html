@@ -3,6 +3,7 @@
                 (click) = "selectRatings(rating)" 
                 (mouseover) = "showRatingText(rating.starText)"
                 [ngClass] = "{'touched': rating.starValue <= value}"
+                [ngStyle] = "{filter : rating.starValue > 3 ? 'sepia(0)':'sepia(60%)'}"
         >
                 <g>
                         <rect fill="none" height="24" width="24" x="0"/>
