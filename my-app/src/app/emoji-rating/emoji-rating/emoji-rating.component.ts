@@ -33,6 +33,10 @@ export class EmojiRatingComponent implements ControlValueAccessor {
 
   constructor() { }
 
+  get value(){
+    return this._value.starValue;
+  }
+
   writeValue(value: any): void {
       this._value = value ;
   }
