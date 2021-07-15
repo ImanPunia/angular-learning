@@ -11,6 +11,7 @@ import { ResuableControlsExampleComponent } from './resuable-controls-example/re
 import { CustomInputComponentComponent } from './custom-input-component/custom-input-component.component';
 import { EmojiRatingComponent } from './emoji-rating/emoji-rating/emoji-rating.component';
 import { OddEvenBoxComponent } from './odd-even-number/odd-even-box/odd-even-box.component';
+import { ContentProjectionComponent } from './content-projection/content-projection/content-projection.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { OddEvenBoxComponent } from './odd-even-number/odd-even-box/odd-even-box
     CustomInputComponentComponent,
     EmojiRatingComponent,
     OddEvenBoxComponent,
+    ContentProjectionComponent,
   ],
   imports: [
     BrowserModule,
