@@ -1,6 +1,17 @@
 <ng-content></ng-content>
+
 <ng-content select= [multiSlot]></ng-content>
+
 <ng-content select="header"></ng-content>
 <ng-content select="content"></ng-content>
 <ng-content select="footer"></ng-content>
-<ng-container [ngTemplateOutlet] = "conditional"></ng-container>
+
+<ng-container *ngFor="let child of allchildrens">
+    <ng-container  [ngTemplateOutlet] = "child.templateRef"></ng-container>
+</ng-container>
+
+<ng-container *ngFor = "let child of childs">
+    <ng-container [ngTemplateOutlet] = "child"></ng-container>
+</ng-container>
+
+

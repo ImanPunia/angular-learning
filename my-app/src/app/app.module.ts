@@ -12,6 +12,7 @@ import { CustomInputComponentComponent } from './custom-input-component/custom-i
 import { EmojiRatingComponent } from './emoji-rating/emoji-rating/emoji-rating.component';
 import { OddEvenBoxComponent } from './odd-even-number/odd-even-box/odd-even-box.component';
 import { ContentProjectionComponent } from './content-projection/content-projection/content-projection.component';
+import { ElementContentDirective } from './directives/element-content.directive';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ContentProjectionComponent } from './content-projection/content-project
     EmojiRatingComponent,
     OddEvenBoxComponent,
     ContentProjectionComponent,
+    ElementContentDirective,
   ],
   imports: [
     BrowserModule,

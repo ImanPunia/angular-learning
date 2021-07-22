@@ -10,6 +10,7 @@
 <app-content-projection>
     <div>single slot content projection</div>
 </app-content-projection>
+
  <app-content-projection>
     <div multiSlot> multi slot content projection </div>
 </app-content-projection>
@@ -17,13 +18,18 @@
 
 <app-content-projection>
     <header><h1 #header>Content Projection</h1></header>
-    <content>mUlti slot content projection</content>
+    <content> <div #content>multi slot content projection</div></content>
     <footer>content Child Example</footer>
 </app-content-projection>
 
 <app-content-projection>
-    <ng-template #conditionalRendering>
-        <div>Conditional content projection</div>
+    <ng-template appElementContent>
+        <div>child 1</div>
+    </ng-template>
+    <ng-template appElementContent>
+        <div>child 2</div>
     </ng-template>
 </app-content-projection>
+
+
 
