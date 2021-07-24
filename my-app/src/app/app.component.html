@@ -7,14 +7,28 @@
 
 <!-- <app-odd-even-box></app-odd-even-box> -->
 
-<app-content-projection>
+<app-notify >
+    <ng-template #renderData>
+        I'm notifier
+    </ng-template>
+</app-notify>
+<button (click)="show()">Show me</button>
+
+<app-notify >
+    <ng-template #renderData1>
+        I'm error notifier
+    </ng-template>
+</app-notify>
+
+<button (click)="error()">error</button>
+
+<!-- <app-content-projection>
     <div>single slot content projection</div>
 </app-content-projection>
 
  <app-content-projection>
     <div multiSlot> multi slot content projection </div>
 </app-content-projection>
-
 
 <app-content-projection>
     <header><h1 #header>Content Projection</h1></header>
@@ -29,7 +43,7 @@
     <ng-template appElementContent>
         <div>child 2</div>
     </ng-template>
-</app-content-projection>
+</app-content-projection> -->
 
 
 

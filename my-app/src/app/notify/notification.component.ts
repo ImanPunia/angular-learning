@@ -11,7 +11,9 @@ export class NotifyComponent implements OnInit {
   @ViewChild('showMessage', {read: ViewContainerRef, static: true}) showMessage: ViewContainerRef;
   constructor(private readonly notifySer: NotifyService) { }
   ngOnInit(): void {
-    this.notifySer.ViewSubject$.subscribe((value) => {
+    this.notifySer.containerRef = this.showMessage;
+    this.notifySer.ViewSubject.subscribe((value) => {
+        this.showMessage.clear();
         this.showView(value);
     });
   }

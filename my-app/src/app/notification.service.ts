@@ -1,18 +1,15 @@
 import { TemplateRef, ViewContainerRef } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export class NotifyService {
 
   containerRef: ViewContainerRef;
-  ViewSubject = new BehaviorSubject<TemplateRef<any>>(null);
-  ViewSubject$ = this.ViewSubject.asObservable();
+  ViewSubject = new Subject<TemplateRef<any>>();
 
   constructor() { }
 
   initiateview(value) {
-    if(this.containerRef)  {
-      this.clearTemplate();
-    }
+    this.clearTemplate();
     this.ViewSubject.next(value);
   }
 

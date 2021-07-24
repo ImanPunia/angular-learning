@@ -12,6 +12,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class AppComponent implements OnInit{
  
   @ViewChild('renderData' , {static:true}) messageRef: TemplateRef<any>;
+  @ViewChild('renderData1' , {static:true}) messageRefs: TemplateRef<any>;
+  help = false;
+
   starsRatings = feedbackData;
 
 
@@ -29,7 +32,16 @@ export class AppComponent implements OnInit{
     this.notifyser.clearTemplate();
   }
 
-  show() {
-    this.notifyser.initiateview(this.messageRef);
+  error(){
+    this.help = !this.help;
   }
+
+  show() {
+    if(this.help){
+      this.notifyser.initiateview(this.messageRef);
+    } else {
+      this.notifyser.initiateview(this.messageRefs);
+    }
+  }
+
 }
