@@ -19,6 +19,6 @@ export class ExpandCollapseComponent implements OnInit {
 
   changeState(value){
     this.expand = value;
-    this.expanded.emit(value);
+    this.expanded.emit(this.expand);
   }
 }

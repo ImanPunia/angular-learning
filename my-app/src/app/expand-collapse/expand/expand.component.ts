@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ExpandCollapseDirective } from 'app/directives/expand-collapse.directive';
 import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.component';
 
 @Component({
@@ -8,7 +9,7 @@ import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.comp
 })
 export class ExpandComponent implements OnInit {
 
-  constructor(public expandCollapse: ExpandCollapseComponent) { }
+  constructor(public expandCollapse: ExpandCollapseDirective) { }
 
   ngOnInit(): void {
   }

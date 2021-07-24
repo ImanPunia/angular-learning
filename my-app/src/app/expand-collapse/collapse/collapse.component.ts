@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.component';
+import { Component, OnInit } from '@angular/core';
+import { ExpandCollapseDirective } from 'app/directives/expand-collapse.directive';
 
 @Component({
   selector: 'app-collapse',
@@ -7,7 +7,7 @@ import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.comp
   styleUrls: ['./collapse.component.scss']
 })
 export class CollapseComponent implements OnInit {
-  constructor(public expandCollapse: ExpandCollapseComponent) { }
+  constructor(public expandCollapse: ExpandCollapseDirective) { }
 
   ngOnInit(): void {
   }
