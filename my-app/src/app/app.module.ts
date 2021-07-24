@@ -17,6 +17,7 @@ import { ExpandCollapseComponent } from './expand-collapse/expand-collpase/expan
 import { CollapseComponent } from './expand-collapse/collapse/collapse.component';
 import { ExpandComponent } from './expand-collapse/expand/expand.component';
 import { ExpandCollapseActionComponent } from './expand-collapse/expand-collapse-action/expand-collapse-action.component';
+import { HelperComponent } from './helper/helper.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ExpandCollapseActionComponent } from './expand-collapse/expand-collapse
     ExpandCollapseComponent,
     CollapseComponent,
     ExpandCollapseActionComponent,
-    ExpandComponent
+    ExpandComponent,
+    HelperComponent
   ],
   imports: [
     BrowserModule,

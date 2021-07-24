@@ -2,7 +2,7 @@
 <div class="root">
     <div class="header">
         <div class="text">Expand Collapse Header</div>
-        <ng-container *ngIf = "expand; else rightArrow">
+        <ng-container *ngIf = "expandCollapse.expand; else rightArrow">
             <img class="icon-down icon" (click)="onClick()" src="https://img.icons8.com/material-rounded/24/000000/chevron-down.png"/>
         </ng-container>
         <ng-template #rightArrow>
@@ -10,7 +10,7 @@
         </ng-template>
     </div>
     <ng-container>
-        <div class="body" [ngClass]="{'expands':expand}">
+        <div class="body" [ngClass]="{'expands':expandCollapse.expand}">
             Hi! There,
                 hOW ARE YOU , i HOPE YOU ARE HAVING GREAT TIME...
         </div>

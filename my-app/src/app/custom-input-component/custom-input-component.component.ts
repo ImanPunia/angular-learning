@@ -18,7 +18,7 @@ export class CustomInputComponentComponent implements ControlValueAccessor {
 
   constructor() { }
 
-  writeValue(obj: any): void {debugger;
+  writeValue(obj: any): void {
     this.inputEle.nativeElement.value = obj;
   }
 

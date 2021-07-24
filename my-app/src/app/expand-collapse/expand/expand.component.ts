@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.component';
 
 @Component({
   selector: 'app-expand',
@@ -6,9 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./expand.component.scss']
 })
 export class ExpandComponent implements OnInit {
-  expand;
 
-  constructor() { }
+  constructor(public expandCollapse: ExpandCollapseComponent) { }
 
   ngOnInit(): void {
   }

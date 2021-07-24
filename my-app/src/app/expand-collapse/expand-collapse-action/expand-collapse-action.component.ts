@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ExpandCollapseComponent } from '../expand-collpase/expand-collapse.component';
 
 @Component({
   selector: 'app-expand-collapse-action',
@@ -7,18 +8,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class ExpandCollapseActionComponent implements OnInit {
 
-  @Input() expand  =  false;
-  @Output() expanded = new EventEmitter<boolean>()
-
-  constructor() { }
+  constructor(public expandCollapse: ExpandCollapseComponent) { }
 
   ngOnInit(): void {
-
   }
   
   onClick(){
-    this.expand = !this.expand;
-    this.expanded.emit(this.expand);
+    this.expandCollapse.changeState(!this.expandCollapse.expand);
   }
 
   
