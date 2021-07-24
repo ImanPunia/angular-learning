@@ -1,4 +1,4 @@
-<div appExpandCollapse appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event)">
+<div appExpandCollapse #first="appExpandCollapse" appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event)">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
@@ -6,13 +6,13 @@
     <app-expand>expand</app-expand>
 </div>
 
-<!-- <div appExpandCollapse [expand]="true" (expanded) = "showExpand($event)">
+<div appExpandCollapse appExpandCollapseMedium [ExpandCollapse]= "first" [expand]="true" (expanded) = "showExpand($event)">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
     <app-helper></app-helper>
     <app-expand>expand</app-expand>
-</div> -->
+</div>
 
 
 <!-- <form [formGroup]="feedback">

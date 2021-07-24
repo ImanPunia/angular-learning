@@ -1,6 +1,7 @@
 import { Directive, EventEmitter, Input, Output } from '@angular/core';
 
 @Directive({
+  exportAs: 'appExpandCollapse',
   selector: '[appExpandCollapse]'
 })
 export class ExpandCollapseDirective {

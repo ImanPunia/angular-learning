@@ -16,7 +16,7 @@ export class ExpandCollapseActionComponent implements OnInit {
   }
   
   onClick(){
-    this.expandCollapse.changeState(!this.expandCollapse.toggle.expand);
+    this.expandCollapse.changeState(!this.expandCollapse.expandCollapse.expand);
   }
 
 }
