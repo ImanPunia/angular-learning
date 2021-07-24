@@ -13,6 +13,7 @@ import { EmojiRatingComponent } from './emoji-rating/emoji-rating/emoji-rating.c
 import { OddEvenBoxComponent } from './odd-even-number/odd-even-box/odd-even-box.component';
 import { ContentProjectionComponent } from './content-projection/content-projection/content-projection.component';
 import { ElementContentDirective } from './directives/element-content.directive';
+import { ExpandCollapseComponent } from './expand-collapse/expand-collapse.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { ElementContentDirective } from './directives/element-content.directive'
     OddEvenBoxComponent,
     ContentProjectionComponent,
     ElementContentDirective,
+    ExpandCollapseComponent,
   ],
   imports: [
     BrowserModule,
