@@ -44,4 +44,8 @@ export class AppComponent implements OnInit{
     }
   }
 
+  showExpand(value:boolean){
+    console.log(value);
+  }
+
 }
