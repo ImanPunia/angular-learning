@@ -1,15 +1,15 @@
-import { Directive, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Directive, Host, Input, OnChanges, Optional, SimpleChanges } from '@angular/core';
 import { ExpandCollapseDirective } from './expand-collapse.directive';
 
 @Directive({
-  selector: '[appExpandCollapseMedium]'
+  selector: '[appExpandCollapse],[appExpandCollapseMedium]'
 })
 export class ExpandCollapseMediumDirective implements OnChanges {
 
   @Input() ExpandCollapse: ExpandCollapseDirective;
   expandCollapse: ExpandCollapseDirective = this.expandCollapsedir;
 
-  constructor(private readonly expandCollapsedir: ExpandCollapseDirective) { 
+  constructor(@Host() @Optional() private readonly expandCollapsedir: ExpandCollapseDirective) { 
   }
   
   ngOnChanges(changes: SimpleChanges): void {
