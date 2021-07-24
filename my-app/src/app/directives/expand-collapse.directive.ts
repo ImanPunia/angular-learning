@@ -10,8 +10,5 @@ export class ExpandCollapseDirective {
 
   constructor() { }
 
-  changeState(value){
-    this.expand = value;
-    this.expanded.emit(this.expand);
-  }
+  
 }

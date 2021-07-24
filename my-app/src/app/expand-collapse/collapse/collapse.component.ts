@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ExpandCollapseMediumDirective } from 'app/directives/expand-collapse-medium.directive';
 import { ExpandCollapseDirective } from 'app/directives/expand-collapse.directive';
 
 @Component({
@@ -7,7 +8,7 @@ import { ExpandCollapseDirective } from 'app/directives/expand-collapse.directiv
   styleUrls: ['./collapse.component.scss']
 })
 export class CollapseComponent implements OnInit {
-  constructor(public expandCollapse: ExpandCollapseDirective) { }
+  constructor(public expandCollapse: ExpandCollapseMediumDirective) { }
 
   ngOnInit(): void {
   }
