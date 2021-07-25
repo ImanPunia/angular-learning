@@ -1,4 +1,4 @@
-<div appExpandCollapse #first="appExpandCollapse" appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event)">
+<div appExpandCollapse #first="appExpandCollapse" appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event, 'sharing same state')">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
@@ -6,7 +6,17 @@
     <app-expand>expand</app-expand>
 </div>
 
-<div  appExpandCollapseMedium [ExpandCollapse]= "first">
+<!-- sharing the state  of above mentioned expand collapse component instance-->
+<div appExpandCollapseMedium [ExpandCollapse]= "first">
+    <app-expand-collapse-action></app-expand-collapse-action>
+    <app-collapse>collpase</app-collapse>
+    <app-collapse>collpase</app-collapse>
+    <app-helper></app-helper>
+    <app-expand>expand</app-expand>
+</div>
+
+<!-- has own independent state then aforementioned components instance -->
+<div  appExpandCollapse appExpandCollapseMedium (expanded) = "showExpand($event,  'state is diifferent from siblings')">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
