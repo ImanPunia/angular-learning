@@ -20,7 +20,9 @@ import { ExpandCollapseActionComponent } from './expand-collapse/expand-collapse
 import { HelperComponent } from './helper/helper.component';
 import { ExpandCollapseDirective } from './directives/expand-collapse.directive';
 import { ExpandCollapseMediumDirective } from './directives/expand-collapse-medium.directive';
-
+import { ExpandCollapseMainComponent } from './expand-collapse-second/expand-collapse-main/expand-collapse-main.component';
+import { ExpandCollapseOutsideComponent } from './helper/expand-collapse-outside/expand-collapse-outside.component';
+import { ExpandCollapseParentComponent } from './expand-collapse-second/expand-collapse-parent/expand-collapse-parent.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +41,10 @@ import { ExpandCollapseMediumDirective } from './directives/expand-collapse-medi
     ExpandComponent,
     HelperComponent,
     ExpandCollapseDirective,
-    ExpandCollapseMediumDirective
+    ExpandCollapseMediumDirective,
+    ExpandCollapseOutsideComponent,
+    ExpandCollapseMainComponent,
+    ExpandCollapseParentComponent
   ],
   imports: [
     BrowserModule,
