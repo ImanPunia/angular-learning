@@ -1,0 +1,15 @@
+.root-container{
+    display: flex;
+}
+
+.nav-tab-display{
+    display: flex;
+    width: 15rem;
+    background-color: lightgray;
+    flex-direction: column;
+}
+
+.nav-body{
+    flex: 1 1 0%;
+    border: 1px solid  grey
+}

@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, TemplateRef, AfterViewInit  } from '@angu
 import { NotifyService } from './notification.service';
 import {feedbackData} from './DemoData/starsRatings';
 import { FormControl, FormGroup } from '@angular/forms';
+import { NavigationService } from './services/navigation.service';
 
 @Component({
   selector: 'app-root',
@@ -17,10 +18,12 @@ export class AppComponent implements OnInit{
 
   starsRatings = feedbackData;
 
-
-  constructor(private readonly notifyser: NotifyService) { }
+  constructor(private readonly notifyser: NotifyService, 
+    private readonly  navSer: NavigationService) { }
   
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.navSer.navChangeSubject.subscribe(value => console.log(value));
+   }
 
   feedback: FormGroup = new FormGroup({
     "rating": new FormControl(''),

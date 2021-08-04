@@ -23,6 +23,9 @@ import { ExpandCollapseMediumDirective } from './directives/expand-collapse-medi
 import { ExpandCollapseMainComponent } from './expand-collapse-second/expand-collapse-main/expand-collapse-main.component';
 import { ExpandCollapseOutsideComponent } from './helper/expand-collapse-outside/expand-collapse-outside.component';
 import { ExpandCollapseParentComponent } from './expand-collapse-second/expand-collapse-parent/expand-collapse-parent.component';
+import { NavParentComponent } from './navigationPlugin/nav-parent/nav-parent.component';
+import { NavTabComponent } from './navigationPlugin/nav-tab/nav-tab.component';
+import { NavBodyComponent } from './navigationPlugin/nav-body/nav-body.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +47,10 @@ import { ExpandCollapseParentComponent } from './expand-collapse-second/expand-c
     ExpandCollapseMediumDirective,
     ExpandCollapseOutsideComponent,
     ExpandCollapseMainComponent,
-    ExpandCollapseParentComponent
+    ExpandCollapseParentComponent,
+    NavParentComponent,
+    NavTabComponent,
+    NavBodyComponent
   ],
   imports: [
     BrowserModule,

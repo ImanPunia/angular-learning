@@ -1,41 +1,51 @@
+<app-nav-parent>
+    <app-nav-tab   [index]  ='1'> Nav 1</app-nav-tab>
+    <app-nav-body  [index]  ='1'> Body 1</app-nav-body>
+    <app-nav-tab  [index]  ='2'> Nav 2</app-nav-tab>
+    <app-nav-body  [index]  ='2'> Body 2</app-nav-body>
+    <app-nav-tab  [index]  ='3'> Nav 3</app-nav-tab>
+    <app-nav-body  [index]  ='3'> Body 3</app-nav-body>
+</app-nav-parent>
+
+
+
 
 <!-- compound component : when author wants to control the view -->
-    <div appExpandCollapse #first="appExpandCollapse" appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event, 'sharing same state')">
+    <!-- <div appExpandCollapse #first="appExpandCollapse" appExpandCollapseMedium [expand]="true" (expanded) = "showExpand($event, 'sharing same state')">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
     <app-helper></app-helper>
     <app-expand>expand</app-expand>
-</div>
+</div> -->
 
 <!-- sharing the state  of above mentioned expand collapse component instance-->
-<div appExpandCollapseMedium [ExpandCollapse]= "first">
+<!-- <div appExpandCollapseMedium [ExpandCollapse]= "first">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
     <app-helper></app-helper>
     <app-expand>expand</app-expand>
-</div>
+</div> -->
 
 <!-- has own independent state then aforementioned components instance -->
-<div  appExpandCollapse appExpandCollapseMedium (expanded) = "showExpand($event,  'state is diifferent from siblings')">
+<!-- <div  appExpandCollapse appExpandCollapseMedium (expanded) = "showExpand($event,  'state is diifferent from siblings')">
     <app-expand-collapse-action></app-expand-collapse-action>
     <app-collapse>collpase</app-collapse>
     <app-collapse>collpase</app-collapse>
     <app-helper></app-helper>
     <app-expand>expand</app-expand>
-</div>
-
+</div> -->
 
 <!-- using template reference : when author gives user freedom to render it anywhere-->
-<app-expand-collapse-parent [expand]="true" [userTemplate]="userTemplate" (expandTile) = "showExpand($event, 'template ref')">
+<!-- <app-expand-collapse-parent [expand]="true" [userTemplate]="userTemplate" (expandTile) = "showExpand($event, 'template ref')">
 </app-expand-collapse-parent>
 
 <ng-template #userTemplate let-expanded = "expanded" let-show = "show">
     <div>{{expanded? 'Tile is expanded': 'Tile is collapsed' }}</div>
     <app-expand-collapse-main [expand] = "expanded" (expanded) = "show()"></app-expand-collapse-main>
     <app-expand-collapse-outside [expand] = "expanded" (expanded) = "show()"></app-expand-collapse-outside>
-</ng-template>
+</ng-template> -->
 
 <!-- <form [formGroup]="feedback">
     <div>
